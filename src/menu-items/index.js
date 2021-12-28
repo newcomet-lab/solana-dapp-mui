@@ -6,34 +6,25 @@ const icons = { IconBrandChrome, IconHelp };
 
 // ==============================|| SAMPLE PAGE & DOCUMENTATION MENU ITEMS ||============================== //
 
-const other = {
-    id: 'sample-docs-roadmap',
+const items = {
+    id: 'menu-items',
     type: 'group',
     children: [
         {
-            id: 'sample-page',
-            title: 'Sample Page',
+            id: 'admin-panel',
+            title: 'Admin Panel',
             type: 'item',
-            url: '/sample-page',
+            url: '/admin-panel',
             icon: icons.IconBrandChrome,
             breadcrumbs: false
         },
         {
-            id: 'new-page',
-            title: 'New Page',
+            id: 'new-vesting',
+            title: 'New Vesting',
             type: 'item',
-            url: '/new-page',
+            url: '/new-vesting',
             icon: icons.IconBrandChrome,
             breadcrumbs: false
-        },
-        {
-            id: 'documentation',
-            title: 'Documentation',
-            type: 'item',
-            url: 'https://codedthemes.gitbook.io/berry/',
-            icon: icons.IconHelp,
-            external: true,
-            target: true
         }
     ]
 };
@@ -41,7 +32,7 @@ const other = {
 // ==============================|| MENU ITEMS ||============================== //
 
 const menuItems = {
-    items: [other]
+    items: [items]
 };
 
 export default menuItems;

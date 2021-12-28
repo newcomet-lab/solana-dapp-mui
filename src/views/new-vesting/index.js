@@ -22,7 +22,7 @@ import MainCard from 'ui-component/cards/MainCard';
 
 // ==============================|| SAMPLE PAGE ||============================== //
 
-export default function NewPage() {
+export default function NewVesting() {
     const [value, setValue] = React.useState(null);
     const [age, setAge] = React.useState('');
     const [flag, setFlag] = React.useState(false);

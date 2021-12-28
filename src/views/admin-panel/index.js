@@ -23,7 +23,7 @@ const rows = [
     createData('Jane Doe', 'Investors', '10,000', 200, '01/01/2022', '12/31/2025', '01/01/2023', 'Activated')
 ];
 
-export default function BasicTable() {
+export default function AdminPanel() {
     return (
         <MainCard>
             <Grid>

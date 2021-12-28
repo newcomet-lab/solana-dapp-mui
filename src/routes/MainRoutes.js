@@ -4,9 +4,8 @@ import { lazy } from 'react';
 import MainLayout from 'layout/MainLayout';
 import Loadable from 'ui-component/Loadable';
 
-// sample page routing
-const SamplePage = Loadable(lazy(() => import('views/sample-page')));
-const NewPage = Loadable(lazy(() => import('views/new-page')));
+const AdminPanel = Loadable(lazy(() => import('views/admin-panel')));
+const NewVesting = Loadable(lazy(() => import('views/new-vesting')));
 
 // ==============================|| MAIN ROUTING ||============================== //
 
@@ -16,15 +15,15 @@ const MainRoutes = {
     children: [
         {
             path: '/',
-            element: <SamplePage />
+            element: <AdminPanel />
         },
         {
-            path: '/sample-page',
-            element: <SamplePage />
+            path: '/admin-panel',
+            element: <AdminPanel />
         },
         {
-            path: '/new-page',
-            element: <NewPage />
+            path: '/new-vesting',
+            element: <NewVesting />
         }
     ]
 };
