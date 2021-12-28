@@ -1,0 +1,834 @@
+{
+  "version": "0.0.0",
+  "name": "Datafarm",
+  "instructions": [
+    {
+      "name": "initStakeAccount",
+      "accounts": [
+        {
+          "name": "stakeAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "authority",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "campaign",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "bump",
+          "type": "u8"
+        },
+        {
+          "name": "role",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "stake",
+      "accounts": [
+        {
+          "name": "stakeAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "user",
+          "isMut": false,
+          "isSigner": true
+        },
+        {
+          "name": "userToken",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "cpiState",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "datafarm",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "campaign",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "poolVault",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "clock",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "unstake",
+      "accounts": [
+        {
+          "name": "stakeAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "user",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "userToken",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "poolVault",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenMint",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "pdaAccount",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "cpiState",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "campaign",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "datafarm",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "clock",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "redeemReward",
+      "accounts": [
+        {
+          "name": "stakeAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "user",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "userToken",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "poolVault",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenMint",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "pdaAccount",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "cpiState",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "campaign",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "datafarm",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "clock",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "submitUtterance",
+      "accounts": [
+        {
+          "name": "utteranceAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "builder",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "campaignAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "stakeAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "msg",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "validate",
+      "accounts": [
+        {
+          "name": "validator",
+          "isMut": false,
+          "isSigner": true
+        },
+        {
+          "name": "utteranceAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "campaignAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "stakeAccount",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "status",
+          "type": "bool"
+        }
+      ]
+    }
+  ],
+  "state": {
+    "struct": {
+      "name": "PoolConfig",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "rewardPerBlock",
+            "type": "u64"
+          },
+          {
+            "name": "mint",
+            "type": "publicKey"
+          },
+          {
+            "name": "vault",
+            "type": "publicKey"
+          },
+          {
+            "name": "authority",
+            "type": "publicKey"
+          },
+          {
+            "name": "head",
+            "type": "u64"
+          },
+          {
+            "name": "campaigns",
+            "type": {
+              "array": [
+                "publicKey",
+                20
+              ]
+            }
+          },
+          {
+            "name": "architectStake",
+            "type": "u64"
+          },
+          {
+            "name": "builderStake",
+            "type": "u64"
+          },
+          {
+            "name": "validatorStake",
+            "type": "u64"
+          },
+          {
+            "name": "rewardApy",
+            "type": "u8"
+          },
+          {
+            "name": "poolCap",
+            "type": "u64"
+          },
+          {
+            "name": "penalty",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    "methods": [
+      {
+        "name": "new",
+        "accounts": [
+          {
+            "name": "authority",
+            "isMut": false,
+            "isSigner": true
+          },
+          {
+            "name": "stakingProgram",
+            "isMut": false,
+            "isSigner": false
+          },
+          {
+            "name": "vault",
+            "isMut": true,
+            "isSigner": false
+          },
+          {
+            "name": "mint",
+            "isMut": true,
+            "isSigner": false
+          },
+          {
+            "name": "tokenProgram",
+            "isMut": false,
+            "isSigner": false
+          }
+        ],
+        "args": [
+          {
+            "name": "architectStake",
+            "type": "u64"
+          },
+          {
+            "name": "builderStake",
+            "type": "u64"
+          },
+          {
+            "name": "validatorStake",
+            "type": "u64"
+          },
+          {
+            "name": "rewardApy",
+            "type": "u8"
+          },
+          {
+            "name": "poolCap",
+            "type": "u64"
+          },
+          {
+            "name": "penalty",
+            "type": "u64"
+          },
+          {
+            "name": "rewardPerBlock",
+            "type": "u64"
+          }
+        ]
+      },
+      {
+        "name": "createCampaign",
+        "accounts": [
+          {
+            "name": "campaignAccount",
+            "isMut": true,
+            "isSigner": false
+          },
+          {
+            "name": "architect",
+            "isMut": false,
+            "isSigner": true
+          },
+          {
+            "name": "pool",
+            "isMut": true,
+            "isSigner": false
+          },
+          {
+            "name": "datafarm",
+            "isMut": false,
+            "isSigner": false
+          },
+          {
+            "name": "tokenProgram",
+            "isMut": false,
+            "isSigner": false
+          }
+        ],
+        "args": [
+          {
+            "name": "offChainReference",
+            "type": "u64"
+          },
+          {
+            "name": "period",
+            "type": "u64"
+          },
+          {
+            "name": "minBuilder",
+            "type": "u64"
+          },
+          {
+            "name": "minValidator",
+            "type": "u64"
+          },
+          {
+            "name": "rewardPerUtterance",
+            "type": "u64"
+          },
+          {
+            "name": "validationQuorum",
+            "type": "u64"
+          },
+          {
+            "name": "domain",
+            "type": "string"
+          },
+          {
+            "name": "subject",
+            "type": "string"
+          },
+          {
+            "name": "explain",
+            "type": "string"
+          },
+          {
+            "name": "phrase",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "name": "updateReward",
+        "accounts": [
+          {
+            "name": "authority",
+            "isMut": false,
+            "isSigner": false
+          }
+        ],
+        "args": [
+          {
+            "name": "reward",
+            "type": "u64"
+          }
+        ]
+      }
+    ]
+  },
+  "accounts": [
+    {
+      "name": "stakeAccount",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "tokenAmount",
+            "type": "u64"
+          },
+          {
+            "name": "lockInTime",
+            "type": "i64"
+          },
+          {
+            "name": "startBlock",
+            "type": "u64"
+          },
+          {
+            "name": "lockOutTime",
+            "type": "i64"
+          },
+          {
+            "name": "endBlock",
+            "type": "u64"
+          },
+          {
+            "name": "weight",
+            "type": "u64"
+          },
+          {
+            "name": "pendingReward",
+            "type": "u64"
+          },
+          {
+            "name": "rewarded",
+            "type": "bool"
+          },
+          {
+            "name": "status",
+            "type": "bool"
+          },
+          {
+            "name": "tokenAddress",
+            "type": "publicKey"
+          },
+          {
+            "name": "userAddress",
+            "type": "publicKey"
+          },
+          {
+            "name": "campaignAddress",
+            "type": "publicKey"
+          },
+          {
+            "name": "role",
+            "type": "u8"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CampaignAccount",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "refId",
+            "type": "u64"
+          },
+          {
+            "name": "head",
+            "type": "u64"
+          },
+          {
+            "name": "tail",
+            "type": "u64"
+          },
+          {
+            "name": "architect",
+            "type": "publicKey"
+          },
+          {
+            "name": "stakeAccount",
+            "type": "publicKey"
+          },
+          {
+            "name": "stakeStatus",
+            "type": "bool"
+          },
+          {
+            "name": "minBuilder",
+            "type": "u64"
+          },
+          {
+            "name": "minValidator",
+            "type": "u64"
+          },
+          {
+            "name": "rewardPerUtterance",
+            "type": "u64"
+          },
+          {
+            "name": "validationQuorum",
+            "type": "u64"
+          },
+          {
+            "name": "rewardToken",
+            "type": "publicKey"
+          },
+          {
+            "name": "utterances",
+            "type": {
+              "array": [
+                "publicKey",
+                100
+              ]
+            }
+          },
+          {
+            "name": "utteranceApproved",
+            "type": "u64"
+          },
+          {
+            "name": "finish",
+            "type": "bool"
+          },
+          {
+            "name": "timeLimit",
+            "type": "u64"
+          },
+          {
+            "name": "initLimit",
+            "type": "u64"
+          },
+          {
+            "name": "domain",
+            "type": {
+              "array": [
+                "u8",
+                128
+              ]
+            }
+          },
+          {
+            "name": "subject",
+            "type": {
+              "array": [
+                "u8",
+                128
+              ]
+            }
+          },
+          {
+            "name": "explain",
+            "type": {
+              "array": [
+                "u8",
+                256
+              ]
+            }
+          },
+          {
+            "name": "phrase",
+            "type": {
+              "array": [
+                "u8",
+                256
+              ]
+            }
+          },
+          {
+            "name": "nonce",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "UtteranceAccount",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "campaign",
+            "type": "publicKey"
+          },
+          {
+            "name": "builder",
+            "type": "publicKey"
+          },
+          {
+            "name": "head",
+            "type": "u64"
+          },
+          {
+            "name": "validators",
+            "type": {
+              "array": [
+                "publicKey",
+                32
+              ]
+            }
+          },
+          {
+            "name": "data",
+            "type": {
+              "array": [
+                "u8",
+                256
+              ]
+            }
+          },
+          {
+            "name": "correct",
+            "type": "u64"
+          },
+          {
+            "name": "incorrect",
+            "type": "u64"
+          },
+          {
+            "name": "finish",
+            "type": "bool"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    }
+  ],
+  "types": [
+    {
+      "name": "Validate",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "from",
+            "type": "publicKey"
+          },
+          {
+            "name": "status",
+            "type": "bool"
+          }
+        ]
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": 300,
+      "name": "InvalidPDA",
+      "msg": "PDA account mismatch"
+    },
+    {
+      "code": 301,
+      "name": "InvalidAuthority",
+      "msg": "Invalid Authority"
+    },
+    {
+      "code": 302,
+      "name": "UserAlreadyStakes",
+      "msg": "user already staked to this campaign"
+    },
+    {
+      "code": 303,
+      "name": "InvalidRole",
+      "msg": "user select invalid role"
+    },
+    {
+      "code": 304,
+      "name": "InvalidStakeOwner",
+      "msg": "Stake account is not belong to provided user"
+    },
+    {
+      "code": 305,
+      "name": "InvalidStakeCampaign",
+      "msg": "Stake account is not belong to provided campaign"
+    },
+    {
+      "code": 306,
+      "name": "InvalidTokenOwner",
+      "msg": "Token account is not belong to user"
+    },
+    {
+      "code": 307,
+      "name": "InvalidTokenMint",
+      "msg": "Token account mintis not same as SNS Mint"
+    },
+    {
+      "code": 308,
+      "name": "InvalidStakeAccount",
+      "msg": "User did not stake to this campaign"
+    },
+    {
+      "code": 309,
+      "name": "InvalidOrder",
+      "msg": "User should call reward before call unstake"
+    },
+    {
+      "code": 310,
+      "name": "UnstakeProhibted",
+      "msg": "User can not unstake until campaign finish"
+    },
+    {
+      "code": 311,
+      "name": "RewardReedemedBefore",
+      "msg": "user can't call redeem reward twice"
+    },
+    {
+      "code": 312,
+      "name": "WrongBuilderRole",
+      "msg": "only builder can submit utterance"
+    },
+    {
+      "code": 313,
+      "name": "WrongValidatorRole",
+      "msg": "only validator can validate utterance"
+    }
+  ],
+  "metadata": {
+    "address": "duFjsGdWetCnBRoqa2KUdC67iVDq4jzntFo59AHMryQ"
+  }
+}
