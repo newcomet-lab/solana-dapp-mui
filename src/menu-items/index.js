@@ -25,6 +25,14 @@ const items = {
             url: '/new-vesting',
             icon: icons.IconBrandChrome,
             breadcrumbs: false
+        },
+        {
+            id: 'vesting-detail',
+            title: 'Vesting Detail',
+            type: 'item',
+            url: '/vesting-detail',
+            icon: icons.IconBrandChrome,
+            breadcrumbs: false
         }
     ]
 };
